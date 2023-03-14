@@ -21,3 +21,19 @@ else
 {
     Console.Write("Введено отрицательное число");
 }
+
+
+// Второй вариант решения
+// Console.WriteLine("Введите натуральное число");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if (number > 0)
+// {
+//     for (int i = -number; i <= number; i++)
+//     {
+//         Console.Write(i + " ");
+//     }
+// }
+// else
+// {
+//     Console.Write("Число должно быть натуральным положительным");
+// }
