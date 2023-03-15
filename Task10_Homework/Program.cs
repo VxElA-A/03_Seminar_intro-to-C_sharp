@@ -21,7 +21,7 @@ int SecondDigit(int num) // Расположил метод выше всей п
 Console.WriteLine("Введите трёхзначное положительное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number < 100 || number > 1000)
+if (number < 100 || number >= 1000)
 {
     Console.WriteLine("Некорректный ввод");
 }
