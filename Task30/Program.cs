@@ -11,41 +11,42 @@
 
 
 
-int[] arr = new int[8]; // 0 1 2 3 4 5 6 7
+int[] array = new int[8]; // 0 1 2 3 4 5 6 7
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-int[] array = Array8(arr);
+// int[] array = Array8(arr);
 
-int[] Array8(int[] array)
-{
-    Random rnd = new Random();
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = rnd.Next(0, 2);
-    }
-    return array;
-}
+
+// int[] Array8(int[] array)
+// {
+//     Random rnd = new Random();
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = rnd.Next(0, 2);
+//     }
+//     return array;
+// }
 
 
 
 // int[] array = new int[8];
 
-// FillArray(array);
-// WriteArray(array);
+FillArray(array);
+WriteArray(array);
 
-// void FillArray(int[] arr)
-// {
-//     Random rand = new Random();
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         arr[i] = rand.Next(0, 2);
-//     }
-// }
+void FillArray(int[] arr)
+{
+    Random rand = new Random();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rand.Next(0, 2);
+    }
+}
 
-// void WriteArray(int[] arr)
-// {
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         Console.Write(arr[i]+ " ");
-//     }
-// }
+void WriteArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i]+ " ");
+    }
+}
