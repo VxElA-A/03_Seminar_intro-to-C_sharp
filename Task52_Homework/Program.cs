@@ -6,6 +6,22 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
+Console.WriteLine("Введите число строк матрицы");
+int a = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите число столбцов матрицы");
+int b = Convert.ToInt32(Console.ReadLine());
+
+int[,] array = new int[a, b];
+
+Console.WriteLine("Заполненная матрица: ");
+Console.WriteLine();
+FillMatrix(array);
+PrintArray(array);
+Console.WriteLine();
+double[] getAverDouble = GetAverDouble(array);
+PrintArray2(getAverDouble);
+
 void FillMatrix(int[,] arr)
 {
     Random rnd = new Random();
@@ -30,40 +46,27 @@ void PrintArray(int[,] matr)
     }
 }
 
-double GetAverDouble(int[,] arr)
+double[] GetAverDouble(int[,] arr)
 {
-    double sum = 0;
-    double aver = 0;
-    double[] array1 = new double [b];
-    for (int j = 0; j < arr.GetLength(1); j++)
+    double[] array1 = new double[arr.GetLength(1)];
+    for (int i = 0; i < arr.GetLength(1); i++)
     {
-        for (int i = 0; i < arr.GetLength(0); i++)
+        for (int j = 0; j < arr.GetLength(0); j++)
         {
-            while (j < arr.GetLength(1))
-                sum = sum + arr[i, j];
-                aver = sum / (j + 1);
+            array1[i] += arr[j, i];
         }
+        array1[i] = Math.Round(array1[i] / arr.GetLength(0), 1);
     }
-    return aver;
+    return array1;
 }
 
-Console.WriteLine("Введите число строк матрицы");
-int a = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите число столбцов матрицы");
-int b = Convert.ToInt32(Console.ReadLine());
-
-int[,] array = new int[a, b];
-
-// Console.WriteLine();
-// Console.WriteLine("Пустая матрица: ");
-// Console.WriteLine();
-// PrintArray(array);
-// Console.WriteLine();
-Console.WriteLine("Заполненная матрица: ");
-Console.WriteLine();
-FillMatrix(array);
-PrintArray(array);
-Console.WriteLine();
-double getAverDouble = GetAverDouble(array);
-Console.WriteLine(getAverDouble);
+void PrintArray2(double[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length - 1) Console.Write($"{arr[i]} ");
+        else Console.Write($"{arr[i]}");
+    }
+    Console.WriteLine("]");
+}

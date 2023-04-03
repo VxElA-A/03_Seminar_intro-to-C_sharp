@@ -10,25 +10,27 @@ int[,] matrixNew = CreateMatrixRndInt(rowMatrix, colMatrix, 1, 10);
 PrintMatrix(matrixNew);
 int[] arr1 = MatrixToArray(matrixNew);
 PrintArray(arr1);
+Array.Sort(arr1);
+PrintArray(arr1);
 Dictionary(arr1);
 
 void Dictionary(int[] arr) 
 {
-    int count = 1;
+    int count1 = 1;
     int value = arr[0];
-    Array.Sort(arr); // сортирует от мин до макс
+    // Array.Sort(arr); // сортирует от мин до макс
 
     for (int i = 1; i < arr.Length; i++)
     {
-        if (value == arr[i]) count++;
+        if (value == arr[i]) count1++;
         else 
         {
-            Console.WriteLine($"{value} ---> {count}");
+            Console.WriteLine($"{value} ---> {count1}");
             value = arr[i];
-            count = 1;
+            count1 = 1;
         }
     }
-    Console.WriteLine($"{value} ---> {count}");
+    Console.WriteLine($"{value} ---> {count1}");
 }
 
 int[] MatrixToArray(int[,] matrix)
@@ -75,9 +77,9 @@ void PrintMatrix(int[,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j],5}");
+            Console.Write($"{matrix[i, j], 5}");
         }
-        Console.WriteLine("|");
+        Console.WriteLine("    |");
     }
     Console.WriteLine("");
 }

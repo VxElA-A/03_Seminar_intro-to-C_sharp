@@ -53,9 +53,9 @@ void PrintMatrix(int[,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j],5}");
+            Console.Write($"{matrix[i, j], 5}");
         }
-        Console.WriteLine("|");
+        Console.WriteLine("   |");
     }
     Console.WriteLine("");
 }

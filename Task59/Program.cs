@@ -15,24 +15,24 @@
 // 4 2 4
 // 2 6 7
 
-int[,] matrix = CreateMatrixRndInt (4, 4, 1, 10);
-PrintArray2D (matrix);
+int[,] matrix = CreateMatrixRndInt(4, 4, 1, 10);
+PrintArray2D(matrix);
 Console.WriteLine();
-int[]minElemIndexes = MinElemIndexes (matrix);
-int[,] newMatrix = DeleteMinRowColumn (matrix, minElemIndexes[0], minElemIndexes[1]);
-PrintArray2D (newMatrix);
+int[] minElemIndexes = MinElemIndexes(matrix);
+int[,] newMatrix = DeleteMinRowColumn(matrix, minElemIndexes[0], minElemIndexes[1]);
+PrintArray2D(newMatrix);
 
 
-int[,] DeleteMinRowColumn (int[,] arr2D, int rowDel, int columnDel)
+int[,] DeleteMinRowColumn(int[,] arr2D, int rowDel, int columnDel)
 {
-    int[,] newArray2D = new int[arr2D.GetLength(0)-1,arr2D.GetLength(1)-1];
+    int[,] newArray2D = new int[arr2D.GetLength(0) - 1, arr2D.GetLength(1) - 1];
     int m = 0, n = 0;
     for (int i = 0; i < newArray2D.GetLength(0); i++)
     {
-        if (m == rowDel) m++; 
+        if (m == rowDel) m++;
         for (int j = 0; j < newArray2D.GetLength(1); j++)
         {
-            if (n==columnDel) n++;
+            if (n == columnDel) n++;
             newArray2D[i, j] = arr2D[m, n];
             n++;
         }
@@ -50,14 +50,14 @@ int[] MinElemIndexes(int[,] arr2D)
     {
         for (int j = 0; j < arr2D.GetLength(1); j++)
         {
-          if (arr2D[i, j] < arr2D[row, column])
-          {
-            row = i;
-            column = j;
-          }
+            if (arr2D[i, j] < arr2D[row, column])
+            {
+                row = i;
+                column = j;
+            }
         }
     }
-    return new int[]{row, column};
+    return new int[] { row, column };
 }
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
